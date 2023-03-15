@@ -45,7 +45,7 @@ function App() {
     <div className="App"> 
     
         <button onClick={() => setShowModel(true)}>Show Model</button>
-        <Title title="Hello How are you" subTitle={subTitle}/>
+        <Title title="Hello How are you all" subTitle={subTitle}/>
         <Title title="Hai How are you" subTitle="we already knew javascript"/>
       
         {/* <Model></Model> */}
