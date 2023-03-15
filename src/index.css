@@ -12,6 +12,20 @@ code {
     monospace;
 }
 
-h1{
-  color: red;
+.title{
+  padding: 30px 60px;
+  background-color: #cfcfcf;
+  border-radius: 10px;
+  font-weight: normal;
+  margin-bottom: 10px;
 }
+
+.subtitle{
+  color: #555555;
+  font-weight: normal;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f4f4f4;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
