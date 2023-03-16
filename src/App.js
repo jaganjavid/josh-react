@@ -38,18 +38,19 @@ function App() {
     setShowModel(false);
   }
 
-  console.log(showModel);
 
   const subTitle = "we are learning react";
   return (
     <div className="App"> 
+
+        <h1 className='heading'>Hello world</h1>
     
         <button onClick={() => setShowModel(true)}>Show Model</button>
         <Title title="Hello How are you all" subTitle={subTitle}/>
         <Title title="Hai How are you" subTitle="we already knew javascript"/>
       
         {/* <Model></Model> */}
-        {showModel && <Model handelClose={handelClose}>
+        {showModel && <Model handelClose={handelClose} isStyleModel={false}>
            <h2>This my Model</h2>
            <p>This is subtitle</p>
         </Model>}
