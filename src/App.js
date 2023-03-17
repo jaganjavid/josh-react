@@ -1,9 +1,10 @@
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
-import { Title } from './components/Title';
+// import { Title } from './components/Title';
 import Model from './components/Model';
 import { Events } from './components/Events';
+import NewEventForm from './components/NewEventForm';
 
 function App() {
 
@@ -12,11 +13,22 @@ function App() {
   const [showEvent, setShowEvent] = useState(true);
   const [showModel, setShowModel] = useState(false)
 
-  const [events, setEvents] = useState([
-    {title: "Hey Enjoy react learning", id: 1},
-    {title: "Hey Josh How are you", id: 2},
-    {title: "Hey Jagan are you web dev", id: 3},
-  ])
+  // const [events, setEvents] = useState([
+  //   {title: "Hey Enjoy react learning", id: 1},
+  //   {title: "Hey Josh How are you", id: 2},
+  //   {title: "Hey Jagan are you web dev", id: 3},
+  // ])
+
+   const [events, setEvents] = useState([]);
+
+   const addEvent = (event) => {
+       setEvents((prevState) => {
+        return [...prevState, event]
+       })
+
+       setShowModel(false);
+   }
+   
 
   // const handelClick = () =>{
   //   setName("Josh")
@@ -39,20 +51,19 @@ function App() {
   }
 
 
-  const subTitle = "we are learning react";
+  // const subTitle = "we are learning react";
   return (
     <div className="App"> 
 
-        <h1 className='heading'>Hello world</h1>
+        {/* <h1 className='heading'>Hello world</h1> */}
     
         <button onClick={() => setShowModel(true)}>Show Model</button>
-        <Title title="Hello How are you all" subTitle={subTitle}/>
-        <Title title="Hai How are you" subTitle="we already knew javascript"/>
+        {/* <Title title="Hello How are you all" subTitle={subTitle}/> */}
+        {/* <Title title="Hai How are you" subTitle="we already knew javascript"/> */}
       
         {/* <Model></Model> */}
         {showModel && <Model handelClose={handelClose} isStyleModel={false}>
-           <h2>This my Model</h2>
-           <p>This is subtitle</p>
+            <NewEventForm addEvent={addEvent}/>
         </Model>}
         {/* <Model>
            <h3>This my Model</h3>
